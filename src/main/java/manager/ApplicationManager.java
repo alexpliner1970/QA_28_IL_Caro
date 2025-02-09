@@ -24,12 +24,14 @@ public class ApplicationManager {
     }
 
     public void stop(){
-        try {
-            Thread.sleep(4000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+//            Thread.sleep(4000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
 
+        getHlpUser().pause(4000);
         wd.quit();
     }
+
 }

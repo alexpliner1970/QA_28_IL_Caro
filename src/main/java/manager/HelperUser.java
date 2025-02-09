@@ -32,9 +32,8 @@ public class HelperUser extends HelperBase {
            clickOn(By.xpath("//*[text()='Y’alla!']"));
     }
 
-    public boolean loggetOk() {
-        return isElementPresent(By.xpath("//*[text()='Ok']"));
-    }
+
+
     public void click_Ok(){
         clickOn(By.xpath("//*[text()='Ok']"));
     }
@@ -45,5 +44,13 @@ public class HelperUser extends HelperBase {
 
     public void logout() {
         clickOn(By.cssSelector("[href='/logout?url=%2Fsearch']"));
+    }
+
+    public String getMassege() {
+       // pause(2000);
+        WebElement element=wd.findElement(By.cssSelector(".dialog-container>h2"));
+        String text =element.getText();
+        return text;
+
     }
 }

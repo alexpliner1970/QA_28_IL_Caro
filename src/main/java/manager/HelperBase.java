@@ -11,6 +11,7 @@ public class HelperBase {
     WebDriver wd;
 
     public HelperBase(WebDriver wd) {
+
         this.wd = wd;
     }
     public void type(By locator,String text){
@@ -28,4 +29,13 @@ public class HelperBase {
         List<WebElement> list=wd.findElements(locator);
         return list.size()>0;
     }
+
+    public void pause(int time){
+        try {
+            Thread.sleep(time);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }
